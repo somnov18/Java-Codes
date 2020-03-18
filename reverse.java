@@ -1,6 +1,8 @@
 import java.util.*;
-public class reverse{
-    public static void main(String args[]){
+public class reverse
+{
+    public static void main(String args[])
+    {
         System.out.println("enter the number to be reversed:");
         Scanner sc= new Scanner(System.in);
         int a=sc.nextInt();
