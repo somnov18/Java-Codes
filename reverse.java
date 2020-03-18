@@ -4,13 +4,13 @@ public class reverse{
         System.out.println("enter the number to be reversed:");
         Scanner sc= new Scanner(System.in);
         int a=sc.nextInt();
-        int t=a;
-        int b=(a%10)*100;
-        a/=10;
-        b+=((a%10)*10);
-        a/=10;
-        b+=(a%10);
-        a/=10;
-        System.out.println("the number in reverse is "+ b);
+        int rev=0,rem;
+        while(a != 0)
+        {
+            rem = a%10;
+            rev = rev*10 + rem;
+            a = a/10;
+        }
+        System.out.println("the number in reverse is "+rev);
     }
 }
