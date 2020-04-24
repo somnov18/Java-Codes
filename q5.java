@@ -1,34 +1,27 @@
-class rectangle
-{
-    double lenght, breadth;
-    rectangle()
-    {
-        lenght=10;
-        breadth=5;
+import java.util.*;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.*;
+public class q5 {
+    public static void main(String[] args)throws IOException {
+        int i=0;
+        try{
+            FileReader fr = FileReader("abc.txt");
+            BufferedReader br = BufferedReader(fr);
+            FileWriter fw = new FileWriter("xyz.txt",true);
+            String s;
+            while ((s = br.readLine())!= null){
+                fw.write(s);
+            }
+            br.close();
+            fw.close();
+            System.out.println("File copied");
+        }
+       
+        catch(IOException e){
+            System.out.println("File error");
+        }
     }
-    rectangle(double lenght, double breadth)
-    {
-        this.lenght=lenght;
-        this.breadth=breadth;
-    }
-    rectangle(double p)
-    {
-        lenght=breadth=p;
 
-    }
-    double area()
-    {
-        return lenght*breadth;
-    }
-}
-public class q5{
-    public static void main(String[] args) 
-    {
-        rectangle rect1=new rectangle();
-        rectangle rect2=new rectangle(23);
-        rectangle rect3=new rectangle(2.3,5.7);
-        System.out.println(rect1.area());
-        System.out.println(rect2.area());
-        System.out.println(rect3.area());        
-    }
 }
